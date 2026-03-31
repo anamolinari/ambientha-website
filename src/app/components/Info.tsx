@@ -1,0 +1,60 @@
+"use client";
+import Image from "next/image";
+
+export function Info() {
+  return (
+    <div>
+      <div className="relative w-full h-[90vh] md:h-[800px]">
+        <Image
+          src="/images/info/info-1.png"
+          alt="Ambientha"
+          fill
+          className="object-cover"
+        />
+        <div className="absolute flex flex-col inset-0 items-center justify-center gap-5 md:hidden">
+          <p className="font-mono font-normal text-lg uppercase tracking-normal leading-none text-white">
+            Nossa casa é sua
+          </p>
+          <p className="uppercase font-sans font-light text-[44px] leading-none tracking-[-0.04em] text-white max-w-[300px] text-center">
+            A loja Ambientha
+          </p>
+
+          <button className="font-mono font-normal text-lg uppercase tracking-normal leading-none text-white underline">
+            Agende uma visita
+          </button>
+        </div>
+      </div>
+
+      <div className="flex pt-10 pb-20 px-4 md:px-10 font-mono font-normal text-lg uppercase tracking-normal leading-none text-ink">
+        <div className="w-1/2 md:w-1/3">
+          <p>Onde Estamos:</p>
+        </div>
+
+        <div className="w-1/2 md:w-1/3 flex flex-col gap-4">
+          <p>
+            Rua Almirante Barroso, 615,
+            <br />
+            Vila Nova, Blumenau
+          </p>
+          <button className="underline text-left md:hidden uppercase">
+            Como chegar
+          </button>
+        </div>
+
+        <div className="hidden md:flex md:w-1/3 justify-end items-start">
+          <button
+            onClick={() =>
+              window.open(
+                "https://www.google.com/maps/search/?api=1&query=Ambientha+Decorações+Blumenau+SC",
+                "_blank",
+              )
+            }
+            className="underline uppercase  cursor-pointer"
+          >
+            Como chegar
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
