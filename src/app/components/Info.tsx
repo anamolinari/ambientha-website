@@ -19,9 +19,14 @@ export function Info() {
             A loja Ambientha
           </p>
 
-          <button className="font-mono font-normal text-lg uppercase tracking-normal leading-none text-white underline">
+          <a
+            href="https://wa.me/5547999810154?text=Olá!%20Gostaria%20de%20agendar%20uma%20visita"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-mono font-normal text-lg uppercase tracking-normal leading-none text-white underline"
+          >
             Agende uma visita
-          </button>
+          </a>
         </div>
       </div>
 
@@ -36,7 +41,15 @@ export function Info() {
             <br />
             Vila Nova, Blumenau
           </p>
-          <button className="underline text-left md:hidden uppercase">
+          <button
+            onClick={() =>
+              window.open(
+                "https://www.google.com/maps/search/?api=1&query=Ambientha+Decorações+Blumenau+SC",
+                "_blank",
+              )
+            }
+            className="underline text-left md:hidden uppercase"
+          >
             Como chegar
           </button>
         </div>

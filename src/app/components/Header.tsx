@@ -10,7 +10,7 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="fixed md:absolute top-0 left-0 w-full z-50 p-4 flex items-center justify-between  md:p-8">
+    <header className="absolute top-0 left-0 w-full z-50 p-4 flex items-center justify-between  md:p-8">
       {/* Nav esquerda — só desktop */}
       <nav className={navClass}></nav>
 
@@ -24,6 +24,7 @@ export default function Header() {
           className="cursor-pointer"
         />
       </Link>
+
       {/* Hamburguer — só mobile */}
       <button onClick={() => setMenuOpen(!menuOpen)} aria-label="Menu">
         <Image
