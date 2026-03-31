@@ -28,7 +28,7 @@ export default function Video() {
             onClick={handlePlay}
           />
           <div className="absolute inset-0 flex items-center justify-center gap-6 pb-2 font-mono font-normal text-lg uppercase tracking-normal leading-none text-white">
-            <p>Assista agora</p>
+            <p className="hidden md:block">Assista agora</p>
             <button
               onClick={handlePlay}
               className="hover:opacity-70 transition-opacity cursor-pointer"
@@ -40,7 +40,7 @@ export default function Video() {
                 height={64}
               />
             </button>
-            <p>Nosso manifesto</p>
+            <p className="hidden md:block">Nosso manifesto</p>
           </div>
         </>
       )}
