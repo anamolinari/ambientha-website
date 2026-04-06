@@ -7,6 +7,7 @@ interface ScrollableCardsProps {
   paddingX?: string;
   gap?: string;
   scrollRef?: RefObject<HTMLDivElement | null>;
+  draggable?: boolean;
 }
 
 export default function ScrollableCards({
@@ -15,6 +16,7 @@ export default function ScrollableCards({
   paddingX = "px-4",
   gap = "gap-4",
   scrollRef: externalRef,
+  draggable = true,
 }: ScrollableCardsProps) {
   const internalRef = useRef<HTMLDivElement>(null);
   const ref = externalRef || internalRef;
@@ -23,13 +25,14 @@ export default function ScrollableCards({
   const scrollLeft = useRef(0);
 
   function onMouseDown(e: React.MouseEvent) {
+    if (!draggable) return;
     isDragging.current = true;
     startX.current = e.pageX - ref.current!.offsetLeft;
     scrollLeft.current = ref.current!.scrollLeft;
   }
 
   function onMouseMove(e: React.MouseEvent) {
-    if (!isDragging.current) return;
+    if (!draggable || !isDragging.current) return;
     const x = e.pageX - ref.current!.offsetLeft;
     ref.current!.scrollLeft = scrollLeft.current - (x - startX.current);
   }
@@ -45,7 +48,7 @@ export default function ScrollableCards({
       onMouseMove={onMouseMove}
       onMouseUp={onMouseUp}
       onMouseLeave={onMouseUp}
-      className={`flex overflow-x-auto cursor-grab active:cursor-grabbing ${paddingX} ${gap} ${className}`}
+      className={`flex overflow-x-auto ${draggable ? "cursor-grab active:cursor-grabbing" : ""} ${paddingX} ${gap} ${className}`}
       style={
         {
           scrollbarWidth: "none",

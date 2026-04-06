@@ -35,7 +35,7 @@ export default function Expertise() {
         {stats.map((stat) => (
           <div
             key={stat.title}
-            className="flex flex-col justify-between min-w-[343px] h-[343px] p-5 border border-beige shrink-0 md:min-w-0 md:shrink"
+            className="flex flex-col justify-between min-w-[343px] aspect-square p-5 border border-beige shrink-0 md:min-w-0 md:shrink"
           >
             <div className="flex items-center gap-2">
               <p className="font-sans font-light text-[44px] leading-[94%] tracking-[-0.04em] text-ink">
@@ -57,32 +57,29 @@ export default function Expertise() {
         ))}
 
         {/* Card extra */}
-        <div className="flex flex-col justify-between min-w-[343px] h-[343px] bg-beige shrink-0 p-5 md:min-w-0 md:shrink">
+        <a
+          href="https://wa.me/5547999810154?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex flex-col justify-between min-w-[343px] aspect-square bg-beige shrink-0 p-5 md:min-w-0 md:shrink hover:opacity-80 transition-opacity"
+        >
           <p className="font-sans font-light text-[32px] leading-[110%] tracking-[-0.04em] text-ink max-w-[150px]">
             Entre em contato
           </p>
 
           <div className="flex justify-between items-end">
-            <p className="font-sans font-normal text-xs leading-[130%] tracking-normal text-ink opacity-70 max-w-[180px] ">
+            <p className="font-sans font-normal text-xs leading-[130%] tracking-normal text-ink opacity-70 max-w-[180px]">
               Fale com nossa equipe para solicitar um orçamento.
             </p>
 
-            <a
-              href="https://wa.me/5547999810154?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:opacity-70 transition-opacity"
-            >
-              <Image
-                src="/icons/IconArrowRight.svg"
-                alt="Arrow Right"
-                width={32}
-                height={32}
-                className="cursor-pointer"
-              />
-            </a>
+            <Image
+              src="/icons/IconArrowRight.svg"
+              alt="Arrow Right"
+              width={32}
+              height={32}
+            />
           </div>
-        </div>
+        </a>
       </div>
     </div>
   );

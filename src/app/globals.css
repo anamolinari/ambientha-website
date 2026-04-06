@@ -1,10 +1,29 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: var(--font-geist);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, monospace;
   --color-ink: #1e1e1e;
   --color-beige: #f0efea;
+  --animate-marquee: marquee 40s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+html {
+  color-scheme: light only;
+}
+
+body {
+  background-color: #ffffff;
+  color: #1e1e1e;
 }
 
 * {

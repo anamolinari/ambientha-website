@@ -1,5 +1,5 @@
 "use client";
-import { useRef } from "react";
+import { useRef, useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import SectionTitle from "./SectionTitle";
 import ImageCard from "./ImageCard";
@@ -26,7 +26,6 @@ const products = [
     title: "Pisos",
     text: "Madeira, laminados e vinílicos. \nRevestimentos que unem beleza e funcionalidade.",
   },
-
   {
     image: "/images/products/product-5.png",
     title: "Roupas de Cama",
@@ -51,6 +50,23 @@ const products = [
 
 export default function Products() {
   const scrollRef = useRef<HTMLDivElement>(null);
+  const [atStart, setAtStart] = useState(true);
+  const [atEnd, setAtEnd] = useState(false);
+
+  const checkScrollPosition = useCallback(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    setAtStart(el.scrollLeft <= 1);
+    setAtEnd(el.scrollLeft + el.clientWidth >= el.scrollWidth - 1);
+  }, []);
+
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    checkScrollPosition();
+    el.addEventListener("scroll", checkScrollPosition);
+    return () => el.removeEventListener("scroll", checkScrollPosition);
+  }, [checkScrollPosition]);
 
   function scrollLeft() {
     scrollRef.current?.scrollBy({ left: -320, behavior: "smooth" });
@@ -67,8 +83,11 @@ export default function Products() {
         <div className="hidden md:flex gap-3">
           <button
             onClick={scrollLeft}
+            disabled={atStart}
             aria-label="Back"
-            className="cursor-pointer hover:opacity-50"
+            className={`cursor-pointer transition-opacity duration-300 ${
+              atStart ? "opacity-50 cursor-default" : "hover:opacity-50"
+            }`}
           >
             <Image
               src="/icons/IconArrowLeft.svg"
@@ -79,8 +98,11 @@ export default function Products() {
           </button>
           <button
             onClick={scrollRight}
+            disabled={atEnd}
             aria-label="Next"
-            className="cursor-pointer hover:opacity-50"
+            className={`cursor-pointer transition-opacity duration-300 ${
+              atEnd ? "opacity-50 cursor-default" : "hover:opacity-50"
+            }`}
           >
             <Image
               src="/icons/IconArrowRight.svg"
@@ -96,6 +118,7 @@ export default function Products() {
         scrollRef={scrollRef}
         paddingX="px-4 md:px-10"
         gap="gap-4"
+        draggable={false}
       >
         {products.map((product) => (
           <ImageCard

@@ -30,7 +30,7 @@ export default function Services() {
     <div>
       <SectionTitle>Nossos serviços</SectionTitle>
 
-      <ScrollableCards paddingX="flex md:justify-center pb-20" gap="gap-0">
+      <ScrollableCards paddingX="flex md:justify-center pb-20" gap="gap-0" draggable={false}>
         {services.map((service) => (
           <ImageCard
             key={service.title}
