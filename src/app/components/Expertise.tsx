@@ -9,7 +9,7 @@ const stats = [
     description: "Oferecendo o melhor para nossos clientes.",
   },
   {
-    title: "+3 mil",
+    title: "+10 mil",
     since: "Projetos entregues",
     description:
       "Realizados com dedicação e o compromisso de qualidade Ambientha.",
