@@ -22,15 +22,15 @@ export const metadata: Metadata = {
     siteName: "Ambientha",
     images: [
       {
-        url: "https://ambientha.com.br/images/open-graph-logo.png",
-        width: 1200,
-        height: 1200,
-        alt: "Ambientha Decorações",
-      },
-      {
         url: "https://ambientha.com.br/images/open-graph.png",
         width: 1200,
         height: 630,
+        alt: "Ambientha Decorações",
+      },
+      {
+        url: "https://ambientha.com.br/images/open-graph-logo.png",
+        width: 1200,
+        height: 1200,
         alt: "Ambientha Decorações",
       },
     ],
@@ -38,7 +38,6 @@ export const metadata: Metadata = {
     type: "website",
   },
 };
-
 export default function RootLayout({
   children,
 }: {
