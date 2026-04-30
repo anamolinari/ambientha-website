@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Ambientha Decorações
 
-## Getting Started
+![Next.js](https://img.shields.io/badge/Next.js_15-black?style=flat-square&logo=next.js)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS_v4-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)
+![Vercel](https://img.shields.io/badge/Vercel-black?style=flat-square&logo=vercel)
 
-First, run the development server:
+Institutional website for Ambientha Decorações — a Brazilian company and reference in blinds, flooring, and decoration, based in Blumenau/SC with over 20 years in the market.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+🌐 **Live:** [ambientha.com.br](https://ambientha.com.br)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## About
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Website designed to position Ambientha as a market reference, exploring the brand's manifesto and highlighting the products, suppliers, services and history that define the store's identity across more than two decades.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Tech Stack
 
-## Learn More
+- **Next.js 15** (App Router)
+- **TypeScript**
+- **Tailwind CSS v4**
+- **React**
+- **Vercel** (deploy)
 
-To learn more about Next.js, take a look at the following resources:
+## Features
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Split-screen opening section with institutional videos
+- Brand manifesto section with YouTube video integration
+- Products and suppliers showcase
+- Services section (skilled labor, in-house atelier, curtain and blind cleaning)
+- Animated partner brands strip (Tarkett, Belgotex, Tece Brasil and others)
+- Store info with WhatsApp, email and Google Maps integration
+- Mobile first layout, responsive for desktop
+- Open Graph metadata optimized for social media sharing
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Technical Highlights
 
-## Deploy on Vercel
+Some implementation decisions worth noting:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Custom thumbnail with on-demand video loading — the YouTube iframe is only initialized after user interaction, preserving initial page performance
+- Horizontal scroll with drag-to-scroll on product and service cards
+- Partner brands animation built with pure CSS, no external dependencies
+- Open Graph metadata configured with optimized images for WhatsApp, LinkedIn and other platforms
+- Header behavior adapted by breakpoint: fixed on mobile, absolute on desktop
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Credits
+
+[Ana Molinari](https://www.linkedin.com/in/anahmolinari/) and [Lucas Bordignon](https://www.linkedin.com/in/bordignonlucas/)
