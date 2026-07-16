@@ -6,6 +6,7 @@ export default function Frame() {
       <div className="relative w-full md:w-1/2 h-1/2 md:h-full overflow-hidden">
         <video
           src="/videos/Video-1.mp4"
+          poster="/videos/poster-1.jpg"
           autoPlay
           loop
           muted
@@ -23,6 +24,7 @@ export default function Frame() {
       <div className="relative w-full md:w-1/2 h-1/2 md:h-full overflow-hidden">
         <video
           src="/videos/Video-2.mp4"
+          poster="/videos/poster-2.jpg"
           autoPlay
           loop
           muted
