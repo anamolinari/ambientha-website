@@ -11,6 +11,7 @@ export function Info() {
           fill
           className="object-cover"
         />
+        <div className="absolute inset-0 bg-[#1E1E1E]/50" />
         <div className="absolute flex flex-col inset-0 items-center justify-center gap-5">
           <p className="font-mono font-normal text-lg uppercase tracking-normal leading-none text-white">
             Nossa casa é sua
