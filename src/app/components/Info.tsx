@@ -6,11 +6,12 @@ export function Info() {
     <div>
       <div className="relative w-full h-[90vh] md:h-[800px]">
         <Image
-          src="/images/info/info-1.png"
+          src="/images/info/info-1.jpg"
           alt="Ambientha"
           fill
           className="object-cover"
         />
+        <div className="absolute inset-0 bg-[#1E1E1E]/50" />
         <div className="absolute flex flex-col inset-0 items-center justify-center gap-5">
           <p className="font-mono font-normal text-lg uppercase tracking-normal leading-none text-white">
             Nossa casa é sua
