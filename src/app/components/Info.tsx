@@ -6,7 +6,7 @@ export function Info() {
     <div>
       <div className="relative w-full h-[90vh] md:h-[800px]">
         <Image
-          src="/images/info/info-1.png"
+          src="/images/info/info-1.jpg"
           alt="Ambientha"
           fill
           className="object-cover"
