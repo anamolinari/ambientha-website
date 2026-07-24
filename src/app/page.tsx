@@ -13,16 +13,19 @@ import Footer from "./components/Footer";
 export default function Home() {
   return (
     <main>
-      <Header />
-      <Frame />
-      <Features />
-      <Products />
-      <About />
-      <Video />
-      <Highlights />
-      <Expertise />
-      <Services />
-      <Info />
+      {/* Sits above the sticky footer so scrolling the last section uncovers it */}
+      <div className="relative z-10 bg-white">
+        <Header />
+        <Frame />
+        <Features />
+        <Products />
+        <About />
+        <Video />
+        <Highlights />
+        <Expertise />
+        <Services />
+        <Info />
+      </div>
       <Footer />
     </main>
   );
