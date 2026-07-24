@@ -23,7 +23,7 @@ function FooterLogo({ className }: { className?: string }) {
 
 export default function Footer() {
   return (
-    <footer className="bg-beige font-mono font-normal text-sm uppercase tracking-normal leading-none text-ink">
+    <footer className="sticky bottom-0 bg-beige font-mono font-normal text-sm uppercase tracking-normal leading-none text-ink">
       {/* Logo */}
       <div className="px-4 pt-10 md:px-10 md:pt-16">
         <FooterLogo className="w-full h-auto text-ink" />

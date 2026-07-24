@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import RevealWords from "./RevealWords";
 
 export function Info() {
   return (
@@ -13,20 +14,31 @@ export function Info() {
         />
         <div className="absolute inset-0 bg-[#1E1E1E]/50" />
         <div className="absolute flex flex-col inset-0 items-center justify-center gap-5">
-          <p className="font-mono font-normal text-lg uppercase tracking-normal leading-none text-white">
-            Nossa casa é sua
-          </p>
-          <p className="uppercase font-sans font-light text-[44px] leading-none tracking-[-0.04em] text-white text-center whitespace-nowrap">
-            A loja Ambientha
-          </p>
+          <RevealWords
+            whenVisible
+            text="Nossa casa é sua"
+            className="font-mono font-normal text-lg uppercase tracking-normal leading-none text-white"
+          />
+          <RevealWords
+            whenVisible
+            delayMs={150}
+            text="A loja Ambientha"
+            className="uppercase font-sans font-light text-[44px] leading-none tracking-[-0.04em] text-white text-center whitespace-nowrap"
+          />
 
           <a
             href="https://wa.me/5547999810154?text=Olá!%20Gostaria%20de%20agendar%20uma%20visita"
             target="_blank"
             rel="noopener noreferrer"
-            className="font-mono font-normal text-lg uppercase tracking-normal leading-none text-white underline hover:opacity-70 transition-opacity"
+            aria-label="Agende uma visita"
+            className="font-mono font-normal text-lg uppercase tracking-normal leading-none text-white [&_[data-mask]>span]:underline hover:opacity-70 transition-opacity"
           >
-            Agende uma visita
+            <RevealWords
+              as="span"
+              whenVisible
+              delayMs={300}
+              text="Agende uma visita"
+            />
           </a>
         </div>
       </div>
